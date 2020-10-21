@@ -13,7 +13,7 @@ public class Todo {
     @Column(name = "todo_date_create")
     private Date todo_date_create;
     @Column(name = "todo_date_change")
-    private Date task_date_change;
+    private Date todo_date_change;
 
     public Todo() {
     }
@@ -23,7 +23,7 @@ public class Todo {
         this.id = id;
         this.todo_title = todo_title;
         this.todo_date_create = todo_date_create;
-        this.task_date_change = task_date_change;
+        this.todo_date_change = task_date_change;
 
     }
 
@@ -55,11 +55,11 @@ public class Todo {
         this.todo_date_create = todo_date_create;
     }
 
-    public Date getTask_date_change() {
-        return task_date_change;
+    public Date getTodo_date_change() {
+        return todo_date_change;
     }
 
-    public void setTask_date_change(Date task_date_change) {
-        this.task_date_change = task_date_change;
+    public void setTodo_date_change(Date todo_date_change) {
+        this.todo_date_change = todo_date_change;
     }
 }

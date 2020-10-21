@@ -7,7 +7,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
 public class TodoController {
     private final TodoServiceImpl todoService;
 
@@ -17,7 +17,7 @@ public class TodoController {
     }
 
 
-    @PostMapping(value = "/addTodo")
+    @PostMapping(value = "/addtodo")
     public ResponseEntity<Todo> addTodo(@RequestBody Todo todo){
         todoService.addTodo(todo);
         return new ResponseEntity<>(HttpStatus.CREATED);
