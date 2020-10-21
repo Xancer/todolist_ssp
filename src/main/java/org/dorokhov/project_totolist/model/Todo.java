@@ -1,6 +1,7 @@
 package org.dorokhov.project_totolist.model;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -12,20 +13,21 @@ public class Todo {
     private Long id;
     @Column(name = "todo_title")
     private String todo_title;
-    private List<Task> tasks;
+    @Column(name = "todo_date_create")
+    private Date todo_date_create;
+    @Column(name = "todo_date_change")
+    private Date task_date_change;
 
     public Todo() {
     }
 
-    public Todo(Long id, String todo_title, List<Task> tasks) {
+    public Todo(Long id, String todo_title,
+            Date todo_date_create, Date task_date_change) {
         this.id = id;
         this.todo_title = todo_title;
-        this.tasks = tasks;
-    }
+        this.todo_date_create = todo_date_create;
+        this.task_date_change = task_date_change;
 
-    public Todo(String todo_title, List<Task> taskList) {
-        this.todo_title = todo_title;
-        this.tasks = taskList;
     }
 
     public String getTodo_title() {
@@ -36,13 +38,7 @@ public class Todo {
         this.todo_title = todo_title;
     }
 
-    public List<Task> getTasks() {
-        return tasks;
-    }
 
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,5 +48,21 @@ public class Todo {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getTodo_date_create() {
+        return todo_date_create;
+    }
+
+    public void setTodo_date_create(Date todo_date_create) {
+        this.todo_date_create = todo_date_create;
+    }
+
+    public Date getTask_date_change() {
+        return task_date_change;
+    }
+
+    public void setTask_date_change(Date task_date_change) {
+        this.task_date_change = task_date_change;
     }
 }

@@ -19,19 +19,19 @@ public class TaskController {
     }
 
 
-    @PostMapping(value = "/add")
+    @PostMapping(value = "/addtask")
     public ResponseEntity<Task> create(@RequestBody Task task) {
         taskService.addTask(task);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/findall")
+    @GetMapping(value = "/alltask")
     public ResponseEntity<List<Task>> read() {
         final List<Task> taskList = taskService.getAll();
         return new ResponseEntity<>(taskList, HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deletetask/{id}")
     public void delete(@PathVariable(value = "id") Long id) {
         taskService.delete(id);
     }

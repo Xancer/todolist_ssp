@@ -23,10 +23,10 @@ public class TodoController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/findTodo")
-    public ResponseEntity<List<Todo>> read() {
-        final List<Todo> taskList = todoService.getAll();
-        return new ResponseEntity<>(taskList, HttpStatus.OK);
+    @GetMapping(value = "/alltodo")
+    public ResponseEntity<List<Todo>> getAll() {
+        final List<Todo> todoList = todoService.getAll();
+        return new ResponseEntity<>(todoList, HttpStatus.OK);
     }
 
     @DeleteMapping("/deleteTodo/{id}")

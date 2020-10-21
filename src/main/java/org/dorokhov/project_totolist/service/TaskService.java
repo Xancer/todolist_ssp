@@ -1,9 +1,10 @@
 package org.dorokhov.project_totolist.service;
 
 import org.dorokhov.project_totolist.model.Task;
-
+import org.springframework.stereotype.Component;
 import java.util.List;
 
+@Component
 public interface TaskService {
 
     //logic bisnes
