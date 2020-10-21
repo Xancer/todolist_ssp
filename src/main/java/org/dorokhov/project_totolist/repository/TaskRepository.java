@@ -6,8 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface TaskRepository extends JpaRepository<Task, Long> {
-   /* @Query("select t from task t where t = :task_title")
-    Task findByName(@Param("task_title") String task_title);
-    */
+
+    //Task getByTitle(String task_title);
 
 }

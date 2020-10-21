@@ -2,14 +2,11 @@ package org.dorokhov.project_totolist.model;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "todo")
 public class Todo {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "todo_title")
     private String todo_title;
